@@ -2,7 +2,7 @@ import time
 
 from celery import Task
 
-from backend.worker.app_worker import app
+from worker.app_worker import app
 
 @app.task(name="create_task")
 def create_task(task_type):

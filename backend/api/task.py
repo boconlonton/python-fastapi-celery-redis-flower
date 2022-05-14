@@ -4,7 +4,7 @@ from fastapi.responses import JSONResponse
 
 from celery.result import AsyncResult
 
-from backend.worker.tasks import create_task
+from worker.tasks import create_task
 
 tasks_api = APIRouter()
 

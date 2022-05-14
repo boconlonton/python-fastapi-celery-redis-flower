@@ -19,8 +19,8 @@ def run_task(payload=Body(...)):
         "task_id": task.id
     })
 
-@tasks_api.get("/{task_id}}")
-def get_task(task_id: int):
+@tasks_api.get("/{task_id}")
+def get_task(task_id: str):
 
     task_result = AsyncResult(task_id)
 

@@ -25,7 +25,7 @@ services:
 
   worker:
     build: ./backend
-    command: celery worker -app=worker.app_worker --loglevel=info --logfile=logs/celery.log
+    command: celery worker -A  worker.app_worker --loglevel=info --logfile=logs/celery.log
     volumes:
       - ./backend:/usr/src/backend
     environment:
@@ -40,7 +40,7 @@ services:
   
   dashboard:
     build: ./backend
-    command:  flower --app=worker.app_worker --port=5555 --broker=redis://redis:6379/0
+    command:  celery flower -A worker.app_worker --loglevel=info
     ports:
       - 5556:5555
     environment:

@@ -5,7 +5,7 @@
 })();
 
 function handleClick(type) {
-  fetch("/tasks", {
+  fetch("http://127.0.0.1:8002/tasks", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -19,7 +19,7 @@ function handleClick(type) {
 }
 
 function getStatus(taskID) {
-  fetch(`/tasks/${taskID}`, {
+  fetch(`http://127.0.0.1:8002/tasks/${taskID}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
